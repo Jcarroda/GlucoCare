@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna de Miel de la Diabetes Tipo 1 - Control Diabetes</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../favicon.svg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-8) var(--spacing-4);
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .article-title {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--spacing-4);
+            line-height: 1.2;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-4);
+            color: var(--gray-600);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-6);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius-lg);
+            margin-bottom: var(--spacing-8);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .article-content {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            color: var(--gray-700);
+        }
+        
+        .article-content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            color: var(--gray-900);
+            margin: var(--spacing-8) 0 var(--spacing-4) 0;
+        }
+        
+        .article-content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--gray-900);
+            margin: var(--spacing-6) 0 var(--spacing-3) 0;
+        }
+        
+        .article-content p {
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+            border-left: 4px solid var(--primary-500);
+            padding: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+            border-radius: var(--border-radius-md);
+        }
+        
+        .highlight-box h4 {
+            color: var(--primary-700);
+            font-weight: 600;
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            color: var(--primary-600);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: var(--spacing-6);
+            transition: color 0.3s ease;
+        }
+        
+        .back-button:hover {
+            color: var(--primary-700);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h1 class="logo-text">Control Diabetes</h1>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Inicio
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="article-container">
+            <a href="../index.html" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Volver al inicio
+            </a>
+            
+            <div class="article-header">
+                <h1 class="article-title">Luna de Miel de la Diabetes Tipo 1</h1>
+                <div class="article-meta">
+                    <span>📅 15 de Enero, 2025</span>
+                    <span>👨‍⚕️ Dr. Javier Carro</span>
+                    <span>⏱️ 8 min de lectura</span>
+                </div>
+            </div>
+            
+            <img src="../multimedia/¿La-luna-de-miel-de-la-diabetes-tipo-1-reduce-el-riesgo-cardiovascular_1.jpg" 
+                 alt="Luna de miel de la diabetes tipo 1" 
+                 class="article-image">
+            
+            <div class="article-content">
+                <p>La "luna de miel" de la diabetes tipo 1 es un período fascinante y a menudo malentendido que ocurre después del diagnóstico inicial. Durante este tiempo, el páncreas aún produce algo de insulina, lo que puede crear confusión sobre el manejo de la diabetes.</p>
+                
+                <h2>¿Qué es la Luna de Miel de la Diabetes Tipo 1?</h2>
+                
+                <p>La luna de miel, también conocida como período de remisión parcial, es una fase temporal que puede durar desde unas pocas semanas hasta varios años después del diagnóstico de diabetes tipo 1. Durante este período, las células beta del páncreas que aún no han sido completamente destruidas por el sistema inmunológico continúan produciendo algo de insulina.</p>
+                
+                <div class="highlight-box">
+                    <h4>💡 Datos Importantes</h4>
+                    <p>La luna de miel ocurre en aproximadamente el 60-80% de las personas recién diagnosticadas con diabetes tipo 1, especialmente en adultos y adolescentes.</p>
+                </div>
+                
+                <h3>Características de la Luna de Miel</h3>
+                
+                <p>Durante este período, las personas pueden experimentar:</p>
+                
+                <ul>
+                    <li><strong>Necesidades reducidas de insulina:</strong> Pueden necesitar dosis muy pequeñas o incluso no necesitar insulina en absoluto por períodos cortos.</li>
+                    <li><strong>Niveles de glucosa más estables:</strong> Los valores de glucosa en sangre tienden a estar más cerca del rango normal.</li>
+                    <li><strong>Menos episodios de hipoglucemia:</strong> El páncreas residual ayuda a prevenir caídas peligrosas de glucosa.</li>
+                    <li><strong>Mejor control general:</strong> Es más fácil mantener la glucosa dentro del rango objetivo.</li>
+                </ul>
+                
+                <h2>¿Por qué Ocurre la Luna de Miel?</h2>
+                
+                <p>La luna de miel ocurre porque el proceso autoinmune que destruye las células beta del páncreas no es instantáneo. Algunas células beta sobreviven al ataque inicial y continúan funcionando, aunque de manera limitada.</p>
+                
+                <h3>Factores que Influyen en la Duración</h3>
+                
+                <p>La duración de la luna de miel puede variar significativamente y está influenciada por varios factores:</p>
+                
+                <ul>
+                    <li><strong>Edad al diagnóstico:</strong> Los adultos tienden a tener lunas de miel más largas que los niños.</li>
+                    <li><strong>Velocidad del diagnóstico:</strong> Un diagnóstico temprano puede preservar más células beta.</li>
+                    <li><strong>Genética:</strong> Algunas personas tienen una progresión más lenta de la enfermedad.</li>
+                    <li><strong>Tratamiento inicial:</strong> El uso temprano de insulina puede ayudar a preservar las células beta restantes.</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>⚠️ Importante Recordar</h4>
+                    <p>La luna de miel es temporal. Eventualmente, todas las células beta productoras de insulina serán destruidas, y será necesario el tratamiento con insulina de por vida.</p>
+                </div>
+                
+                <h2>Manejo Durante la Luna de Miel</h2>
+                
+                <p>Durante este período, es crucial mantener un enfoque equilibrado:</p>
+                
+                <h3>Monitoreo Continuo</h3>
+                <p>Es importante continuar monitoreando los niveles de glucosa regularmente, incluso si los valores son normales. Esto ayuda a detectar cuando la luna de miel está terminando.</p>
+                
+                <h3>Educación Continua</h3>
+                <p>Utiliza este período para aprender sobre el manejo de la diabetes, contar carbohidratos, y desarrollar buenos hábitos que te servirán cuando la luna de miel termine.</p>
+                
+                <h3>Preparación para el Futuro</h3>
+                <p>Mantén una relación cercana con tu equipo de diabetes y prepárate para el momento en que necesites insulina regularmente.</p>
+                
+                <h2>Señales de que la Luna de Miel Está Terminando</h2>
+                
+                <p>Es importante reconocer las señales de que la luna de miel está llegando a su fin:</p>
+                
+                <ul>
+                    <li>Aumento gradual de los niveles de glucosa en sangre</li>
+                    <li>Necesidad de dosis más altas de insulina</li>
+                    <li>Mayor variabilidad en los niveles de glucosa</li>
+                    <li>Dificultad para mantener la glucosa en rango objetivo</li>
+                    <li>Aparición de síntomas de diabetes no controlada</li>
+                </ul>
+                
+                <h2>Conclusión</h2>
+                
+                <p>La luna de miel de la diabetes tipo 1 es un período único que puede proporcionar un respiro temporal después del diagnóstico. Sin embargo, es crucial entender que es temporal y usar este tiempo sabiamente para prepararse para el manejo a largo plazo de la diabetes.</p>
+                
+                <p>Recuerda que cada persona con diabetes tipo 1 es diferente, y la experiencia de la luna de miel puede variar significativamente. Lo más importante es trabajar estrechamente con tu equipo de atención médica para desarrollar un plan de manejo que funcione para ti.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Control Diabetes</span>
+                    </div>
+                    <p class="footer-description">
+                        Tu compañero digital para el control efectivo de la diabetes.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Navegación</h4>
+                        <ul class="footer-list">
+                            <li><a href="../index.html">Inicio</a></li>
+                            <li><a href="../php/registrarse.php">Registro</a></li>
+                            <li><a href="../php/entrada.php">Iniciar Sesión</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">Artículos</h4>
+                        <ul class="footer-list">
+                            <li><a href="luna-miel-diabetes.html">Luna de Miel</a></li>
+                            <li><a href="conteo-raciones.html">Conteo de Raciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2025 Control Diabetes. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

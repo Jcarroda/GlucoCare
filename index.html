@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Diabetes - Tu compañero digital para el control de la diabetes</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h1 class="logo-text">Control Diabetes</h1>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link active">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Inicio
+                            </a>
+                        </li>
+                        
+                        <!-- Enlaces para usuarios NO logueados -->
+                        <li class="nav-item" id="nav-registro" style="display: none;">
+                            <a href="php/registrarse.php" class="nav-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M20 8V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M23 11H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Registro
+                            </a>
+                        </li>
+                        <li class="nav-item" id="nav-login" style="display: none;">
+                            <a href="php/entrada.php" class="nav-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 17L15 12L10 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Iniciar Sesión
+                            </a>
+                        </li>
+                        
+                        <!-- Enlaces para usuarios logueados -->
+                        <li class="nav-item dropdown" id="nav-control" style="display: none;">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Control
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="dropdown-arrow">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="php/tablaDiabetes.php">Ver Datos</a></li>
+                                <li><a href="php/añadir.php">Añadir Datos</a></li>
+                <li><a href="php/modificar.php">Modificar</a></li>
+                                <li><a href="php/borrar.php">Eliminar</a></li>
+                                <li><a href="php/estadisticas.php">Estadísticas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" id="nav-logout" style="display: none;">
+                            <a href="php/salida.php" class="nav-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Salir
+                            </a>
+                        </li>
+            </ul>
+        </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">Controla tu diabetes de manera inteligente</h2>
+                    <p class="hero-description">
+                        Una herramienta completa para el seguimiento y control de la diabetes. 
+                        Registra tus datos médicos, visualiza patrones y mejora tu calidad de vida.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="php/registrarse.php" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 8V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M23 11H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Comenzar Ahora
+                        </a>
+                        <a href="php/entrada.php" class="btn btn-outline btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 17L15 12L10 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Iniciar Sesión
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-graphic">
+                        <div class="glucose-chart">
+                            <div class="chart-line"></div>
+                            <div class="chart-points">
+                                <div class="point normal"></div>
+                                <div class="point normal"></div>
+                                <div class="point high"></div>
+                                <div class="point normal"></div>
+                                <div class="point low"></div>
+                                <div class="point normal"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">¿Cómo funciona nuestra herramienta?</h2>
+                <p class="section-description">
+                    Un proceso simple y efectivo para mantener el control total de tu diabetes
+                </p>
+            </div>
+            
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Regístrate</h3>
+                        <p class="step-description">
+                            Crea tu cuenta de forma gratuita y segura. Solo necesitas un email y una contraseña.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Registra tus datos</h3>
+                        <p class="step-description">
+                            Añade tus mediciones de glucosa, comidas, insulina y episodios de forma rápida y sencilla.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Visualiza tu progreso</h3>
+                        <p class="step-description">
+                            Observa tus datos en un calendario visual y analiza estadísticas para entender mejor tu diabetes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="benefits-showcase">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">Control Total</h4>
+                    <p class="benefit-text">Mantén un registro completo de todos tus datos médicos</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">Fácil de Usar</h4>
+                    <p class="benefit-text">Interfaz intuitiva diseñada para ser simple y accesible</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22S2 18 2 12V5L12 2L22 5V12C22 18 12 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">Seguro y Privado</h4>
+                    <p class="benefit-text">Tus datos están protegidos con la máxima seguridad</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 9L12 6L16 10L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">Análisis Inteligente</h4>
+                    <p class="benefit-text">Estadísticas y patrones para mejorar tu control</p>
+                </div>
+            </div>
+        </div>
+            </section>
+            
+    <!-- Educational Section -->
+    <section class="educational">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Información Educativa</h2>
+                <p class="section-description">
+                    Recursos importantes para entender mejor la diabetes y su manejo
+                </p>
+            </div>
+            
+            <div class="educational-grid">
+                <div class="educational-card">
+                    <div class="educational-image">
+                        <img src="multimedia/¿La-luna-de-miel-de-la-diabetes-tipo-1-reduce-el-riesgo-cardiovascular_1.jpg" 
+                             alt="Luna de miel de la diabetes tipo 1" 
+                             class="educational-img">
+                    </div>
+                    <div class="educational-content">
+                        <h3 class="educational-title">Luna de Miel de la Diabetes Tipo 1</h3>
+                        <p class="educational-description">
+                            Entiende qué es el período de luna de miel en la diabetes tipo 1 
+                            y cómo puede afectar tu control glucémico.
+                        </p>
+                        <a href="articulos/luna-miel-diabetes.html" class="btn btn-outline btn-sm">
+                            Visitar
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="educational-card">
+                    <div class="educational-image">
+                        <img src="multimedia/Contando_raciones-e096f6fb.webp" 
+                             alt="Conteo de raciones de carbohidratos" 
+                             class="educational-img">
+                    </div>
+                    <div class="educational-content">
+                        <h3 class="educational-title">Conteo de Raciones</h3>
+                        <p class="educational-description">
+                            Aprende a contar correctamente las raciones de carbohidratos 
+                            para un mejor control de tu diabetes.
+                        </p>
+                        <a href="articulos/conteo-raciones.html" class="btn btn-outline btn-sm">
+                            Visitar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">¿Listo para tomar control de tu diabetes?</h2>
+                <p class="cta-description">
+                    Únete a miles de personas que ya están mejorando su calidad de vida 
+                    con nuestro sistema de control de diabetes.
+                </p>
+                <div class="cta-actions">
+                    <a href="php/registrarse.php" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 8V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 11H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Crear Cuenta Gratis
+                    </a>
+                </div>
+            </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Control Diabetes</span>
+                    </div>
+                    <p class="footer-description">
+                        Tu compañero digital para el control efectivo de la diabetes.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Navegación</h4>
+                        <ul class="footer-list">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="php/registrarse.php">Registro</a></li>
+                            <li><a href="php/entrada.php">Iniciar Sesión</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">Control</h4>
+                        <ul class="footer-list">
+                            <li><a href="php/tablaDiabetes.php">Ver Datos</a></li>
+                            <li><a href="php/añadir.php">Añadir Datos</a></li>
+                            <li><a href="php/estadisticas.php">Estadísticas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2025 Control Diabetes. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img class="modal-image" id="modal-image" alt="">
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    
+    <!-- Script para controlar navegación según estado de autenticación -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Función para verificar si el usuario está logueado
+            function checkAuthStatus() {
+                // Hacer una petición al servidor para verificar el estado de autenticación
+                fetch('php/check_auth.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.authenticated) {
+                            // Usuario logueado: mostrar control y salir
+                            document.getElementById('nav-control').style.display = 'block';
+                            document.getElementById('nav-logout').style.display = 'block';
+                            // Ocultar registro e inicio de sesión
+                            document.getElementById('nav-registro').style.display = 'none';
+                            document.getElementById('nav-login').style.display = 'none';
+                        } else {
+                            // Usuario NO logueado: mostrar registro e inicio de sesión
+                            document.getElementById('nav-registro').style.display = 'block';
+                            document.getElementById('nav-login').style.display = 'block';
+                            // Ocultar control y salir
+                            document.getElementById('nav-control').style.display = 'none';
+                            document.getElementById('nav-logout').style.display = 'none';
+                        }
+                    })
+                    .catch(error => {
+                        console.log('Error verificando autenticación:', error);
+                        // En caso de error, mostrar enlaces para usuarios no logueados
+                        document.getElementById('nav-registro').style.display = 'block';
+                        document.getElementById('nav-login').style.display = 'block';
+                        document.getElementById('nav-control').style.display = 'none';
+                        document.getElementById('nav-logout').style.display = 'none';
+                    });
+            }
+            
+            // Verificar estado de autenticación al cargar la página
+            checkAuthStatus();
+        });
+    </script>
+</body>
+</html>

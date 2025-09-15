@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteo de Raciones de Carbohidratos - Control Diabetes</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../favicon.svg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-8) var(--spacing-4);
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .article-title {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--spacing-4);
+            line-height: 1.2;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-4);
+            color: var(--gray-600);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-6);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius-lg);
+            margin-bottom: var(--spacing-8);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .article-content {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            color: var(--gray-700);
+        }
+        
+        .article-content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            color: var(--gray-900);
+            margin: var(--spacing-8) 0 var(--spacing-4) 0;
+        }
+        
+        .article-content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--gray-900);
+            margin: var(--spacing-6) 0 var(--spacing-3) 0;
+        }
+        
+        .article-content p {
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+            border-left: 4px solid var(--primary-500);
+            padding: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+            border-radius: var(--border-radius-md);
+        }
+        
+        .highlight-box h4 {
+            color: var(--primary-700);
+            font-weight: 600;
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            color: var(--primary-600);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: var(--spacing-6);
+            transition: color 0.3s ease;
+        }
+        
+        .back-button:hover {
+            color: var(--primary-700);
+        }
+        
+        .food-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-6) 0;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .food-table th,
+        .food-table td {
+            padding: var(--spacing-4);
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .food-table th {
+            background: var(--primary-50);
+            font-weight: 600;
+            color: var(--primary-700);
+        }
+        
+        .food-table tr:hover {
+            background: var(--gray-50);
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+            border-radius: var(--border-radius-md);
+        }
+        
+        .tip-box h4 {
+            color: #92400e;
+            font-weight: 600;
+            margin-bottom: var(--spacing-2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h1 class="logo-text">Control Diabetes</h1>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Inicio
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="article-container">
+            <a href="../index.html" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Volver al inicio
+            </a>
+            
+            <div class="article-header">
+                <h1 class="article-title">Conteo de Raciones de Carbohidratos</h1>
+                <div class="article-meta">
+                    <span>📅 15 de Enero, 2025</span>
+                    <span>👨‍⚕️ Dr. Javier Carro</span>
+                    <span>⏱️ 10 min de lectura</span>
+                </div>
+            </div>
+            
+            <img src="../multimedia/Contando_raciones-e096f6fb.webp" 
+                 alt="Conteo de raciones de carbohidratos" 
+                 class="article-image">
+            
+            <div class="article-content">
+                <p>El conteo de raciones de carbohidratos es una de las herramientas más poderosas para el control de la diabetes. Esta técnica te permite calcular la cantidad exacta de insulina que necesitas basándote en los carbohidratos que consumes, lo que resulta en un mejor control glucémico y mayor flexibilidad en tu alimentación.</p>
+                
+                <h2>¿Qué es una Ración de Carbohidratos?</h2>
+                
+                <p>Una ración de carbohidratos (también llamada "unidad de carbohidratos" o "porción de carbohidratos") equivale a 10 gramos de carbohidratos. Esta medida estándar facilita el cálculo de la insulina necesaria para metabolizar los carbohidratos que consumes.</p>
+                
+                <div class="highlight-box">
+                    <h4>💡 Concepto Clave</h4>
+                    <p>1 ración = 10 gramos de carbohidratos. Esta equivalencia te permite calcular fácilmente cuánta insulina necesitas para cada comida.</p>
+                </div>
+                
+                <h2>¿Por qué es Importante el Conteo de Raciones?</h2>
+                
+                <p>El conteo de raciones te ofrece múltiples beneficios:</p>
+                
+                <ul>
+                    <li><strong>Control más preciso:</strong> Te permite ajustar la dosis de insulina exactamente a lo que comes.</li>
+                    <li><strong>Mayor flexibilidad:</strong> Puedes comer una variedad más amplia de alimentos sin preocuparte por el control glucémico.</li>
+                    <li><strong>Mejor calidad de vida:</strong> Reduces la ansiedad relacionada con la comida y la diabetes.</li>
+                    <li><strong>Resultados más estables:</strong> Mantienes niveles de glucosa más consistentes.</li>
+                </ul>
+                
+                <h2>Cómo Contar Raciones: Guía Paso a Paso</h2>
+                
+                <h3>Paso 1: Identifica los Carbohidratos</h3>
+                <p>Los carbohidratos se encuentran principalmente en:</p>
+                <ul>
+                    <li>Cereales y granos (pan, arroz, pasta, avena)</li>
+                    <li>Frutas y jugos de frutas</li>
+                    <li>Verduras con almidón (papas, maíz, guisantes)</li>
+                    <li>Legumbres (frijoles, lentejas, garbanzos)</li>
+                    <li>Lácteos (leche, yogur)</li>
+                    <li>Alimentos dulces y postres</li>
+                </ul>
+                
+                <h3>Paso 2: Lee las Etiquetas Nutricionales</h3>
+                <p>Busca la línea "Carbohidratos totales" en la etiqueta nutricional. Divide este número entre 10 para obtener las raciones.</p>
+                
+                <div class="tip-box">
+                    <h4>🔍 Ejemplo Práctico</h4>
+                    <p>Si un alimento tiene 25 gramos de carbohidratos totales: 25 ÷ 10 = 2.5 raciones</p>
+                </div>
+                
+                <h3>Paso 3: Usa Tablas de Referencia</h3>
+                <p>Para alimentos sin etiqueta, utiliza tablas de referencia de raciones de carbohidratos:</p>
+                
+                <table class="food-table">
+                    <thead>
+                        <tr>
+                            <th>Alimento</th>
+                            <th>Cantidad</th>
+                            <th>Raciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pan blanco</td>
+                            <td>1 rebanada (25g)</td>
+                            <td>2 raciones</td>
+                        </tr>
+                        <tr>
+                            <td>Arroz cocido</td>
+                            <td>1 taza (150g)</td>
+                            <td>3 raciones</td>
+                        </tr>
+                        <tr>
+                            <td>Pasta cocida</td>
+                            <td>1 taza (140g)</td>
+                            <td>3 raciones</td>
+                        </tr>
+                        <tr>
+                            <td>Manzana</td>
+                            <td>1 mediana (150g)</td>
+                            <td>1.5 raciones</td>
+                        </tr>
+                        <tr>
+                            <td>Leche</td>
+                            <td>1 vaso (200ml)</td>
+                            <td>1 ración</td>
+                        </tr>
+                        <tr>
+                            <td>Patata</td>
+                            <td>1 mediana (150g)</td>
+                            <td>2.5 raciones</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h2>Calculando la Insulina para Raciones</h2>
+                
+                <p>Para calcular cuánta insulina necesitas, necesitas conocer tu <strong>relación insulina-carbohidratos</strong> (ICR). Esta relación te dice cuántas raciones de carbohidratos puede cubrir 1 unidad de insulina.</p>
+                
+                <div class="highlight-box">
+                    <h4>📊 Fórmula de Cálculo</h4>
+                    <p><strong>Unidades de insulina = Raciones de carbohidratos ÷ Relación IC</strong></p>
+                    <p>Ejemplo: Si tu ICR es 1:10 y comes 3 raciones: 3 ÷ 10 = 0.3 unidades de insulina</p>
+                </div>
+                
+                <h3>Determinando tu Relación Insulina-Carbohidratos</h3>
+                <p>Tu equipo de diabetes te ayudará a determinar tu ICR inicial, que luego se ajustará según tu respuesta individual. Las relaciones típicas son:</p>
+                <ul>
+                    <li><strong>Desayuno:</strong> 1:8 a 1:12 (más insulina por ración)</li>
+                    <li><strong>Almuerzo:</strong> 1:10 a 1:15</li>
+                    <li><strong>Cena:</strong> 1:12 a 1:18 (menos insulina por ración)</li>
+                </ul>
+                
+                <h2>Herramientas para Facilitar el Conteo</h2>
+                
+                <h3>Aplicaciones Móviles</h3>
+                <p>Existen numerosas aplicaciones que pueden ayudarte:</p>
+                <ul>
+                    <li><strong>MyFitnessPal:</strong> Base de datos extensa de alimentos</li>
+                    <li><strong>Carbs & Cals:</strong> Específica para conteo de carbohidratos</li>
+                    <li><strong>Foodvisor:</strong> Reconocimiento de alimentos por foto</li>
+                </ul>
+                
+                <h3>Básculas Digitales</h3>
+                <p>Una báscula de cocina es invaluable para pesar alimentos y obtener mediciones precisas, especialmente para frutas, verduras y alimentos a granel.</p>
+                
+                <h3>Tablas de Referencia</h3>
+                <p>Mantén tablas de referencia a mano para alimentos que consumes frecuentemente. Esto acelera el proceso de conteo.</p>
+                
+                <h2>Errores Comunes y Cómo Evitarlos</h2>
+                
+                <h3>1. No Contar Verduras Sin Almidón</h3>
+                <p>Las verduras como lechuga, espinacas, brócoli y pepinos tienen muy pocos carbohidratos y generalmente no necesitan ser contados.</p>
+                
+                <h3>2. Olvidar las Bebidas</h3>
+                <p>Los jugos, refrescos y bebidas deportivas contienen carbohidratos significativos que deben contarse.</p>
+                
+                <h3>3. No Considerar la Fibra</h3>
+                <p>En algunos casos, puedes restar la fibra de los carbohidratos totales, pero consulta con tu equipo de diabetes sobre esto.</p>
+                
+                <h3>4. Estimaciones Imprecisas</h3>
+                <p>Es mejor pesar o medir los alimentos cuando sea posible en lugar de estimar por tamaño.</p>
+                
+                <div class="tip-box">
+                    <h4>💡 Consejo Profesional</h4>
+                    <p>Lleva un diario de alimentos y glucosa para identificar patrones y ajustar tu conteo de raciones según tus resultados.</p>
+                </div>
+                
+                <h2>Consejos para el Éxito</h2>
+                
+                <ul>
+                    <li><strong>Practica regularmente:</strong> El conteo de raciones mejora con la práctica constante.</li>
+                    <li><strong>Mantén registros:</strong> Anota lo que comes, las raciones calculadas y los resultados de glucosa.</li>
+                    <li><strong>Revisa con tu equipo:</strong> Discute tus cálculos y resultados regularmente con tu educador en diabetes.</li>
+                    <li><strong>Sé paciente:</strong> Dominar el conteo de raciones toma tiempo, pero los beneficios valen la pena.</li>
+                    <li><strong>Usa herramientas:</strong> Aprovecha las aplicaciones y herramientas disponibles para facilitar el proceso.</li>
+                </ul>
+                
+                <h2>Conclusión</h2>
+                
+                <p>El conteo de raciones de carbohidratos es una habilidad fundamental para el control efectivo de la diabetes. Aunque puede parecer complicado al principio, con práctica y las herramientas adecuadas, se convierte en una segunda naturaleza que te permite disfrutar de una alimentación más flexible y un mejor control glucémico.</p>
+                
+                <p>Recuerda que cada persona es diferente, y lo que funciona para otros puede no funcionar exactamente igual para ti. Trabaja estrechamente con tu equipo de diabetes para desarrollar un plan de conteo de raciones personalizado que se adapte a tu estilo de vida y necesidades específicas.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Control Diabetes</span>
+                    </div>
+                    <p class="footer-description">
+                        Tu compañero digital para el control efectivo de la diabetes.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Navegación</h4>
+                        <ul class="footer-list">
+                            <li><a href="../index.html">Inicio</a></li>
+                            <li><a href="../php/registrarse.php">Registro</a></li>
+                            <li><a href="../php/entrada.php">Iniciar Sesión</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">Artículos</h4>
+                        <ul class="footer-list">
+                            <li><a href="luna-miel-diabetes.html">Luna de Miel</a></li>
+                            <li><a href="conteo-raciones.html">Conteo de Raciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2025 Control Diabetes. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

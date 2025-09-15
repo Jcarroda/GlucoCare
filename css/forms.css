@@ -1,0 +1,149 @@
+/* ========================================
+   FORMS - CONTROL DIABETES
+   ======================================== */
+
+.forms-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-6);
+}
+
+.forms-header {
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+}
+
+.forms-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-4);
+}
+
+.forms-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--gray-600);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.forms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-8);
+}
+
+.form-section {
+    background: var(--white);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.form-section:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-section-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: var(--spacing-6);
+    text-align: center;
+}
+
+.form-section-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-4);
+    color: var(--white);
+}
+
+.form-section-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin: 0;
+    color: var(--white);
+}
+
+.form-section-subtitle {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+    margin: var(--spacing-2) 0 0 0;
+}
+
+.form-section-body {
+    padding: var(--spacing-6);
+}
+
+.form-button {
+    width: 100%;
+    padding: var(--spacing-4);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-button-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+}
+
+.form-button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.form-button.loading {
+    color: transparent;
+}
+
+.form-button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Form sections specific styles */
+.form-section.control-glucose .form-section-header {
+    background: linear-gradient(135deg, var(--glucose-normal) 0%, var(--secondary-color) 100%);
+}
+
+.form-section.comida .form-section-header {
+    background: linear-gradient(135deg, var(--info-color) 0%, var(--primary-color) 100%);
+}
+
+.form-section.hipoglucemia .form-section-header {
+    background: linear-gradient(135deg, var(--glucose-hypo) 0%, var(--primary-light) 100%);
+}
+
+.form-section.hiperglucemia .form-section-header {
+    background: linear-gradient(135deg, var(--glucose-hyper) 0%, var(--warning-color) 100%);
+}

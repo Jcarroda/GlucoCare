@@ -1,0 +1,99 @@
+# ========================================
+# CONTROL DIABETES - GITIGNORE
+# ========================================
+
+# Archivos de configuración con credenciales
+php/conexion.php
+config.php
+.env
+.env.local
+.env.production
+
+# Archivos de logs
+logs/
+*.log
+
+# Archivos de cache
+cache/
+tmp/
+temp/
+
+# Archivos de backup
+backups/
+*.sql
+*.dump
+
+# Archivos de uploads
+uploads/
+multimedia/uploads/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de dependencias
+vendor/
+node_modules/
+composer.lock
+package-lock.json
+
+# Archivos de build
+dist/
+build/
+
+# Archivos de testing
+tests/coverage/
+.phpunit.result.cache
+
+# Archivos de documentación generada
+docs/build/
+
+# Archivos de configuración local
+local_config.php
+database_config.php
+
+# Archivos de sesión
+sessions/
+
+# Archivos temporales de PHP
+*.tmp
+*.temp
+
+# Archivos de error de PHP
+error_log
+php_errors.log
+
+# Archivos de configuración del servidor
+.htaccess.local
+nginx.conf.local
+apache.conf.local
+
+# Archivos de certificados SSL
+*.pem
+*.key
+*.crt
+*.csr
+
+# Archivos de configuración de base de datos local
+database/local/
+migrations/local/
+
+# Archivos de configuración de email local
+mail_config.php
+
+# Archivos de configuración de backup local
+backup_config.php
+
+# Archivos de configuración de cache local
+cache_config.php
+
+# Archivos de configuración de logging local
+logging_config.php

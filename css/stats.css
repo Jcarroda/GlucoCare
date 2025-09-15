@@ -1,0 +1,344 @@
+/* ========================================
+   ESTADÍSTICAS - ESTILOS ESPECÍFICOS
+   ======================================== */
+
+/* Contenedor principal de estadísticas */
+.stats-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-6);
+}
+
+/* Header de estadísticas */
+.stats-header {
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+}
+
+.stats-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--primary-600);
+    margin-bottom: var(--spacing-2);
+}
+
+.stats-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--gray-600);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid de tarjetas de estadísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
+}
+
+/* Tarjetas de estadísticas */
+.stats-card {
+    background: var(--white);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-200);
+}
+
+.stats-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.stats-card-header {
+    padding: var(--spacing-6);
+    border-bottom: 1px solid var(--gray-200);
+    background: linear-gradient(135deg, var(--primary-50) 0%, var(--white) 100%);
+}
+
+.stats-card-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-100);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-3);
+    color: var(--primary-600);
+}
+
+.stats-card-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-1);
+}
+
+.stats-card-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    margin: 0;
+}
+
+.stats-card-body {
+    padding: var(--spacing-6);
+}
+
+/* Estilos específicos para episodios */
+.episode-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    border-radius: var(--border-radius-lg);
+    background: var(--gray-50);
+    margin-bottom: var(--spacing-3);
+}
+
+.episode-item:last-child {
+    margin-bottom: 0;
+}
+
+.episode-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.episode-icon.hipo {
+    background: var(--red-100);
+    color: var(--red-600);
+}
+
+.episode-icon.hiper {
+    background: var(--orange-100);
+    color: var(--orange-600);
+}
+
+.episode-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.episode-type {
+    font-weight: 500;
+    color: var(--gray-900);
+    font-size: var(--font-size-sm);
+}
+
+.episode-count {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--primary-600);
+}
+
+/* Tabla de estadísticas */
+.stats-table {
+    overflow-x: auto;
+}
+
+.stats-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.stats-table th {
+    background: var(--gray-50);
+    color: var(--gray-700);
+    font-weight: 600;
+    padding: var(--spacing-3);
+    text-align: left;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.stats-table td {
+    padding: var(--spacing-3);
+    border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-700);
+}
+
+.stats-table tr:hover {
+    background: var(--gray-50);
+}
+
+/* Lista de insulina */
+.insulin-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.insulin-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-4);
+    background: var(--gray-50);
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--primary-500);
+}
+
+.insulin-rank {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-500);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    flex-shrink: 0;
+}
+
+.insulin-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+    flex: 1;
+}
+
+.insulin-date {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+}
+
+.insulin-amount {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--primary-600);
+}
+
+/* Gráfico mensual */
+.monthly-chart {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: var(--spacing-2);
+    height: 200px;
+    padding: var(--spacing-4) 0;
+}
+
+.month-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-2);
+    flex: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.month-bar:hover {
+    transform: scale(1.05);
+}
+
+.bar-container {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    position: relative;
+}
+
+.bar {
+    width: 100%;
+    max-width: 24px;
+    background: linear-gradient(to top, var(--primary-500), var(--primary-400));
+    border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
+    transition: all 0.3s ease;
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+.month-bar:hover .bar {
+    background: linear-gradient(to top, var(--primary-600), var(--primary-500));
+}
+
+.month-label {
+    font-size: var(--font-size-xs);
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.month-value {
+    font-size: var(--font-size-xs);
+    color: var(--primary-600);
+    font-weight: 600;
+}
+
+/* Estados hover para las barras */
+.month-bar.hovered .bar {
+    background: linear-gradient(to top, var(--primary-700), var(--primary-600));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-container {
+        padding: var(--spacing-4);
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+    }
+    
+    .stats-card-header,
+    .stats-card-body {
+        padding: var(--spacing-4);
+    }
+    
+    .monthly-chart {
+        height: 150px;
+        gap: var(--spacing-1);
+    }
+    
+    .bar-container {
+        height: 100px;
+    }
+    
+    .bar {
+        max-width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .stats-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .episode-item {
+        padding: var(--spacing-2);
+    }
+    
+    .insulin-item {
+        padding: var(--spacing-3);
+    }
+    
+    .monthly-chart {
+        height: 120px;
+    }
+    
+    .bar-container {
+        height: 80px;
+    }
+    
+    .bar {
+        max-width: 16px;
+    }
+}
