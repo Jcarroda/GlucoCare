@@ -22,7 +22,7 @@ return [
 
     // Configuración de la Aplicación
     'app' => [
-        'name' => 'Control Diabetes',
+        'name' => 'GlucoCare',
         'version' => '1.0.0',
         'env' => 'development', // development, production
         'debug' => true,
@@ -53,8 +53,8 @@ return [
         'username' => 'tu_email@gmail.com',
         'password' => 'tu_contraseña_email',
         'encryption' => 'tls',
-        'from_name' => 'Control Diabetes',
-        'from_email' => 'noreply@controldiabetes.com'
+        'from_name' => 'GlucoCare',
+        'from_email' => 'noreply@glucocare.com'
     ],
 
     // Configuración de Archivos

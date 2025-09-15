@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Datos - Control Diabetes</title>
+    <title>Eliminar Datos - GlucoCare</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
                             <circle cx="12" cy="12" r="3" fill="currentColor"/>
                         </svg>
                     </div>
-                    <h1 class="logo-text">Control Diabetes</h1>
+                    <h1 class="logo-text">GlucoCare</h1>
                 </div>
                 
                 <nav class="nav">
@@ -197,7 +197,7 @@
                                 <circle cx="12" cy="12" r="3" fill="currentColor"/>
                             </svg>
                         </div>
-                        <span class="logo-text">Control Diabetes</span>
+                        <span class="logo-text">GlucoCare</span>
                     </div>
                     <p class="footer-description">
                         Tu compañero digital para el control efectivo de la diabetes.
@@ -229,7 +229,7 @@
             
             <div class="footer-bottom">
                 <p class="footer-copyright">
-                    &copy; 2025 Control Diabetes. Todos los derechos reservados.
+                    &copy; 2025 GlucoCare. Todos los derechos reservados.
                 </p>
             </div>
         </div>

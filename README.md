@@ -1,4 +1,4 @@
-# 🩺 Control Diabetes - Tu Compañero Digital para el Control de la Diabetes
+# 🩺 GlucoCare - Tu Compañero Digital para el Control de la Diabetes
 
 ![Control Diabetes](https://img.shields.io/badge/Control-Diabetes-blue?style=for-the-badge&logo=medical-cross)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
@@ -9,7 +9,7 @@
 
 ## 📋 Descripción
 
-**Control Diabetes** es una aplicación web completa diseñada específicamente para personas con diabetes tipo 1 y tipo 2. Permite un control detallado y organizado de todos los aspectos relacionados con el manejo de la diabetes, desde el registro de niveles de glucosa hasta el seguimiento de episodios de hipoglucemia e hiperglucemia.
+**GlucoCare** es una aplicación web completa diseñada específicamente para personas con diabetes tipo 1 y tipo 2. Permite un control detallado y organizado de todos los aspectos relacionados con el manejo de la diabetes, desde el registro de niveles de glucosa hasta el seguimiento de episodios de hipoglucemia e hiperglucemia.
 
 ## ✨ Características Principales
 
@@ -68,7 +68,7 @@
 ## 📁 Estructura del Proyecto
 
 ```
-controldiabetesjaviercarro.atwebpages.com/
+glucocare/
 ├── 📄 index.html                 # Página principal
 ├── 📁 php/                       # Lógica del servidor
 │   ├── 🔐 autenticacion.php      # Verificación de sesión
@@ -157,16 +157,16 @@ El archivo `database/schema.sql` contiene:
 1. **Clonar el repositorio**
    ```bash
    git clone [URL_DEL_REPOSITORIO]
-   cd control-diabetes
+   cd glucocare
    ```
 
 2. **Configurar la base de datos**
    ```bash
    # Crear la base de datos
-   mysql -u root -p -e "CREATE DATABASE control_diabetes;"
+   mysql -u root -p -e "CREATE DATABASE glucocare;"
    
    # Importar el esquema
-   mysql -u root -p control_diabetes < database/schema.sql
+   mysql -u root -p glucocare < database/schema.sql
    ```
 
 3. **Configurar la conexión**
@@ -192,7 +192,7 @@ El archivo `database/schema.sql` contiene:
 
 6. **Acceder a la aplicación**
    ```
-   http://localhost/control-diabetes/
+   http://localhost/glucocare/
    ```
 
 ### **Configuración Adicional**

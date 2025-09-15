@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - Control Diabetes</title>
+    <title>Iniciar Sesión - GlucoCare</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <circle cx="12" cy="12" r="3" fill="currentColor"/>
                         </svg>
                     </div>
-                    <h1 class="logo-text">Control Diabetes</h1>
+                    <h1 class="logo-text">GlucoCare</h1>
                 </div>
                 
                 <nav class="nav">
@@ -162,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <circle cx="12" cy="12" r="3" fill="currentColor"/>
                         </svg>
                     </div>
-                    <h1 class="auth-logo-text">Control Diabetes</h1>
+                    <h1 class="auth-logo-text">GlucoCare</h1>
                 </div>
                 <h2 class="auth-title">Bienvenido de vuelta</h2>
                 <p class="auth-subtitle">Inicia sesión para acceder a tu panel de control</p>

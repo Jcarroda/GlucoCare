@@ -1,4 +1,4 @@
-# 🚀 Guía de Despliegue - Control Diabetes
+# 🚀 Guía de Despliegue - GlucoCare
 
 ## 📋 Preparación para Producción
 
@@ -6,15 +6,15 @@
 
 ```bash
 # Crear base de datos en producción
-mysql -u root -p -e "CREATE DATABASE control_diabetes_prod;"
+mysql -u root -p -e "CREATE DATABASE glucocare_prod;"
 
 # Importar esquema
-mysql -u root -p control_diabetes_prod < database/schema.sql
+mysql -u root -p glucocare_prod < database/schema.sql
 
 # Crear usuario específico para la aplicación
 mysql -u root -p -e "
-CREATE USER 'diabetes_user'@'localhost' IDENTIFIED BY 'contraseña_segura';
-GRANT SELECT, INSERT, UPDATE, DELETE ON control_diabetes_prod.* TO 'diabetes_user'@'localhost';
+CREATE USER 'glucocare_user'@'localhost' IDENTIFIED BY 'contraseña_segura';
+GRANT SELECT, INSERT, UPDATE, DELETE ON glucocare_prod.* TO 'glucocare_user'@'localhost';
 FLUSH PRIVILEGES;
 "
 ```
@@ -110,7 +110,7 @@ server {
     listen 443 ssl http2;
     server_name tu-dominio.com;
     
-    root /var/www/control-diabetes;
+    root /var/www/glucocare;
     index index.html index.php;
     
     # SSL Configuration
@@ -176,17 +176,17 @@ opcache.fast_shutdown=1
 # backup.sh
 
 DATE=$(date +%Y%m%d_%H%M%S)
-BACKUP_DIR="/backups/control-diabetes"
-DB_NAME="control_diabetes_prod"
+BACKUP_DIR="/backups/glucocare"
+DB_NAME="glucocare_prod"
 
 # Crear directorio de backup
 mkdir -p $BACKUP_DIR
 
 # Backup de base de datos
-mysqldump -u diabetes_user -p $DB_NAME > $BACKUP_DIR/db_backup_$DATE.sql
+mysqldump -u glucocare_user -p $DB_NAME > $BACKUP_DIR/db_backup_$DATE.sql
 
 # Backup de archivos
-tar -czf $BACKUP_DIR/files_backup_$DATE.tar.gz /var/www/control-diabetes
+tar -czf $BACKUP_DIR/files_backup_$DATE.tar.gz /var/www/glucocare
 
 # Limpiar backups antiguos (más de 30 días)
 find $BACKUP_DIR -name "*.sql" -mtime +30 -delete
@@ -208,7 +208,7 @@ echo "Backup completado: $DATE"
 // En config.php
 'logging' => [
     'level' => 'error', // Solo errores en producción
-    'file' => '/var/log/control-diabetes/app.log',
+    'file' => '/var/log/glucocare/app.log',
     'max_files' => 10
 ]
 ```
@@ -219,8 +219,8 @@ echo "Backup completado: $DATE"
 apt-get install htop iotop nethogs
 
 # Configurar logrotate para logs de PHP
-cat > /etc/logrotate.d/control-diabetes << EOF
-/var/log/control-diabetes/*.log {
+cat > /etc/logrotate.d/glucocare << EOF
+/var/log/glucocare/*.log {
     daily
     missingok
     rotate 30

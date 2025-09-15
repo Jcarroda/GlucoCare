@@ -3,7 +3,7 @@
 // Copia este archivo como 'conexion.php' y configura tus credenciales
 
 $host = 'localhost';           // Host de la base de datos
-$dbname = 'control_diabetes';  // Nombre de la base de datos
+$dbname = 'glucocare';   // Nombre de la base de datos
 $username = 'tu_usuario';      // Usuario de MySQL
 $password = 'tu_contraseña';   // Contraseña de MySQL
 
