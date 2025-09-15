@@ -309,42 +309,6 @@ chmod 755 logs uploads cache backups
 - Cache de consultas
 - CDN para recursos estáticos
 
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## 👨‍💻 Autor
-
-**Desarrollador Full Stack**
-- Especializado en aplicaciones de salud
-- Enfoque en UX/UI y accesibilidad
-- Experiencia en PHP, MySQL y JavaScript
-
-## 📞 Contacto
-
-- **Email**: [tu-email@ejemplo.com]
-- **LinkedIn**: [tu-linkedin]
-- **GitHub**: [tu-github]
-
-## 🙏 Agradecimientos
-
-- Comunidad de desarrolladores PHP
-- Documentación de MySQL
-- Recursos de diseño web moderno
-- Feedback de usuarios con diabetes
-
----
-
-**⭐ Si este proyecto te ha sido útil, considera darle una estrella en GitHub**
-
-*Desarrollado con ❤️ para la comunidad diabética*
